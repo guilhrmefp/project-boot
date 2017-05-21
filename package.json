@@ -1,0 +1,21 @@
+{
+  "name": "kidelicia",
+  "version": "1.0.0",
+  "description": "Estudo de gulp",
+  "main": "main.html",
+  "devDependencies": {
+    "browser-sync": "^2.18.11",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://guilhrmefp@bitbucket.org/guilhrmefp/kidelicia.git"
+  },
+  "author": "guilhrmefp",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/guilhrmefp/kidelicia#readme"
+}

@@ -15,4 +15,4 @@ npm install gulp    // Após, usar esse comando para cada projeto
 * node_modules/ **-->** *(packages usados no projeto depois de 'npm install')*
 * npm-debug.log **-->** *(log do npm)*
 * \*\*/_notes **-->** *(arquivos geralmente criados pelo dreamweaver)*
-* dist/ **-->** *(pasta final com arquivo compilados)*ivo compilados)*
+* dist/ **-->** *(pasta final com arquivo compilados)*

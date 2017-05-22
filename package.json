@@ -1,21 +1,25 @@
 {
-  "name": "kidelicia",
+  "name": "project-boot",
   "version": "1.0.0",
-  "description": "Estudo de gulp",
+  "description": "Estudo de Gulp",
   "main": "main.html",
   "devDependencies": {
     "browser-sync": "^2.18.11",
     "gulp": "^3.9.1",
-    "gulp-sass": "^3.1.0"
+    "gulp-if": "^2.0.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp-useref": "^3.1.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://guilhrmefp@bitbucket.org/guilhrmefp/kidelicia.git"
+    "url": "git+https://guilhrmefp@bitbucket.org/guilhrmefp/project-boot.git"
   },
   "author": "guilhrmefp",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/guilhrmefp/kidelicia#readme"
+  "homepage": "https://bitbucket.org/guilhrmefp/project-boot#readme"
 }

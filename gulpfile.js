@@ -3,6 +3,10 @@
 =========================*/
 var gulp        = require('gulp');
 var sass        = require('gulp-sass');
+var cssnano     = require('gulp-cssnano');
+var useref      = require('gulp-useref');
+var uglify      = require('gulp-uglify');
+var gulpIf      = require('gulp-if');
 var browserSync = require('browser-sync').create();
 
 
@@ -16,9 +20,8 @@ gulp.task('task-name', function() {
     .pipe(gulp.dest('destination')) // Outputs the file in the destination folder
 });
 
-
-//
-gulp.task('sass', function() { //gerar arquivos css
+//gerar arquivos css
+gulp.task('sass', function() {
   return gulp.src('app/scss/**/*.+(scss|sass)') // Gets all files ending with .scss in app/scss and children dirs
          .pipe(sass()) //usando plugin do sass
          .pipe(gulp.dest('app/css'))
@@ -27,7 +30,19 @@ gulp.task('sass', function() { //gerar arquivos css
          }));
 });
 
-gulp.task('browserSync', function(){ //task de live-reload do browser
+//juntar arquivos js
+gulp.task('useref', function() {
+  return gulp.src('app/*.html')
+         .pipe(useref())
+         // Minifies only if it's a JavaScript file
+         .pipe(gulpIf('*.js', uglify()))
+         // Minifies only if it's a CSS file
+         .pipe(gulpIf('*.css', cssnano()))
+         .pipe(gulp.dest('dist'));
+});
+
+//task de live-reload do browser
+gulp.task('browserSync', function(){
   browserSync.init({
     server: {
       baseDir: 'app'

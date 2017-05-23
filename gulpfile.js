@@ -1,13 +1,14 @@
 /*=========================
 ||  Packages do projeto  ||
 =========================*/
-var gulp        = require('gulp');
-var sass        = require('gulp-sass');
-var cssnano     = require('gulp-cssnano');
-var useref      = require('gulp-useref');
-var uglify      = require('gulp-uglify');
-var gulpIf      = require('gulp-if');
-var browserSync = require('browser-sync').create();
+var gulp        = require('gulp');                  //gulp
+var sass        = require('gulp-sass');             //sass
+var cssnano     = require('gulp-cssnano');          //minificadorr css
+var useref      = require('gulp-useref');           //criador de "blocos" de script no html
+var uglify      = require('gulp-uglify');           //minificador de js
+var gulpIf      = require('gulp-if');               //condicional de plugin
+var del         = require('del');                   //exclui arquivos do diretório
+var browserSync = require('browser-sync').create(); //live-reload
 
 
 /*=========================
@@ -30,7 +31,7 @@ gulp.task('sass', function() {
          }));
 });
 
-//juntar arquivos js
+//juntar arquivos js e minificar (js e css)
 gulp.task('useref', function() {
   return gulp.src('app/*.html')
          .pipe(useref())
@@ -39,6 +40,22 @@ gulp.task('useref', function() {
          // Minifies only if it's a CSS file
          .pipe(gulpIf('*.css', cssnano()))
          .pipe(gulp.dest('dist'));
+});
+
+//copiar fontes
+gulp.task('fonts', function() {
+  return gulp.src('app/fonts/**/*')
+         .pipe(gulp.dest('dist/fonts'));
+});
+
+//limpar diretório
+gulp.task('clean:dist', function() {
+  return del.sync('dist');
+});
+
+//limpar cache do gulp
+gulp.task('cache:clear', function(callback) {
+  return cache.clearAll(callback);
 });
 
 //task de live-reload do browser

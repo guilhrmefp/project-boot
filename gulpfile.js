@@ -1,6 +1,7 @@
 /*=========================
 ||  Packages do projeto  ||
 =========================*/
+
 var gulp        = require('gulp');                  //gulp
 var sass        = require('gulp-sass');             //sass
 var cssnano     = require('gulp-cssnano');          //minificadorr css
@@ -15,6 +16,7 @@ var browserSync = require('browser-sync').create(); //live-reload
 /*=========================
 ||         TASKS         ||
 =========================*/
+
 //task exemplo com sytaxe completa
 gulp.task('task-name', function() {
   return gulp.src('source-files') // Get source files with gulp.src

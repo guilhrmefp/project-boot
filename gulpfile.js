@@ -8,6 +8,7 @@ var useref      = require('gulp-useref');           //criador de "blocos" de scr
 var uglify      = require('gulp-uglify');           //minificador de js
 var gulpIf      = require('gulp-if');               //condicional de plugin
 var del         = require('del');                   //exclui arquivos do diretório
+var runSequence = require('run-sequence')           //define a sequência em que as terefas devem ser iniciadas
 var browserSync = require('browser-sync').create(); //live-reload
 
 
@@ -74,4 +75,28 @@ gulp.task('watch', ['browserSync', 'sass'], function(){
   gulp.watch('app/scss/**/*.+(scss|sass)', ['sass']);
   gulp.watch('app/js/**/*.js', browserSync.reload);
   gulp.watch('app/templates/**/*.html', browserSync.reload);
+});
+
+//definir sequência de tarefas (exemplo)
+gulp.task('build-example', function(callback){
+  runSequence('task-one', ['tasks', 'two', 'run', 'in', 'parallel'], 'task-three', callback);
+});
+
+//compilar projeto final
+gulp.task('build', function(callback){
+  runSequence(
+    'clean:dist',
+    'sass',
+    ['useref', 'fonts'],
+    callback
+  );
+});
+
+//tarefa padrão
+gulp.task('default', function(callback){
+  runSequence(
+    'sass',
+    ['browserSync', 'watch'],
+    callback
+  );
 });

@@ -2,15 +2,18 @@
 ||  Packages do projeto  ||
 =========================*/
 
-var gulp        = require('gulp');                  //gulp
-var sass        = require('gulp-sass');             //sass
-var cssnano     = require('gulp-cssnano');          //minificadorr css
-var useref      = require('gulp-useref');           //criador de "blocos" de script no html
-var uglify      = require('gulp-uglify');           //minificador de js
-var gulpIf      = require('gulp-if');               //condicional de plugin
-var del         = require('del');                   //exclui arquivos do diretório
-var runSequence = require('run-sequence')           //define a sequência em que as terefas devem ser iniciadas
-var browserSync = require('browser-sync').create(); //live-reload
+var gulp        = require('gulp');                    //gulp
+var sass        = require('gulp-sass');               //sass
+var cssnano     = require('gulp-cssnano');            //minificadorr css
+var useref      = require('gulp-useref');             //criador de "blocos" de script no html
+var uglify      = require('gulp-uglify');             //minificador de js
+var gulpIf      = require('gulp-if');                 //condicional de plugin
+var handlebars  = require('gulp-compile-handlebars'); //gerador de templates
+var dir         = require('node-dir');                //retorna subdiretórios
+var rename      = require('gulp-rename');             //renomear arquivos
+var del         = require('del');                     //exclui arquivos do diretório
+var runSequence = require('run-sequence')             //define a sequência em que as terefas devem ser iniciadas
+var browserSync = require('browser-sync').create();   //live-reload
 
 
 /*=========================
@@ -43,6 +46,20 @@ gulp.task('useref', function() {
          // Minifies only if it's a CSS file
          .pipe(gulpIf('*.css', cssnano()))
          .pipe(gulp.dest('dist'));
+});
+
+//gerar html dos templates
+gulp.task('handlebars', function() {
+  dir.subdirs('app/templates/partials', function(err, subdirs) {
+    if (err) throw err;
+    return gulp.src('app/templates/pages/*.hbs')
+           .pipe(handlebars({}, {
+              ignorePartials: true,
+              batch: subdirs
+            }))
+           .pipe(rename({extname: '.html'}))
+           .pipe(gulp.dest('dist'));
+  });
 });
 
 //copiar fontes

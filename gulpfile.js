@@ -4,9 +4,11 @@
 
 var gulp        = require('gulp');                    //gulp
 var sass        = require('gulp-sass');               //sass
+var compass     = require('gulp-compass');            //vendor prefixer de css
 var cssnano     = require('gulp-cssnano');            //minificadorr css
 var useref      = require('gulp-useref');             //criador de "blocos" de script no html
 var uglify      = require('gulp-uglify');             //minificador de js
+var sourcemaps  = require('gulp-sourcemaps');         //gerador de mapa para debuggar arquivo minificado
 var gulpIf      = require('gulp-if');                 //condicional de plugin
 var handlebars  = require('gulp-compile-handlebars'); //gerador de templates
 var dir         = require('node-dir');                //retorna subdiretórios
@@ -82,7 +84,8 @@ gulp.task('cache:clear', function(callback) {
 gulp.task('browserSync', function(){
   browserSync.init({
     server: {
-      baseDir: 'app'
+      baseDir: 'app',
+      startPath: 'main.html'
     }
   });
 });

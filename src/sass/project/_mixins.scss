@@ -1,0 +1,19 @@
+/*==================================================
+|| Fallback para navagadores que não suportam REM ||
+==================================================*/
+@mixin font-size($sizeValue) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
+
+/*==================================================
+||               GERADOR DE BOTÕES                ||
+==================================================*/
+@mixin buttons($btn-color, $btn-bg) {
+  color: $btn-color;
+  background-color: $btn-bg;
+
+  &:hover, &:focus {
+    background-color: darken($btn-bg, 5%);
+  }
+}

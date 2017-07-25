@@ -1,0 +1,113 @@
+.section-title {
+  margin-top: 30px;
+  margin-bottom: 25px;
+  @include font-size(3);
+  font-weight: normal;
+}
+
+.section-call {
+  padding-top: 50px;
+  font-family: $font-special;
+  @include font-size(2.5);
+  font-weight: 300;
+  text-align: center;
+
+  p {
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  .text-1 {
+    max-width: 450px;
+    margin: {
+      left: auto;
+      right: auto;
+    }
+  }
+}
+.special-title {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-family: $font-default;
+  @include font-size(4.2);
+  font-weight: bold;
+  color: $yellow;
+  text-transform: uppercase;
+
+  &--sm {
+    @include font-size(3);
+  }
+}
+
+.section-contact {
+  .social-list {
+    margin-top: 30px;
+
+    .glyphicon {
+      width: 32px;
+      line-height: 28px;
+      font-size: 1.8rem;
+
+      &-facebook {
+        &:before {
+          position: relative;
+          top: 1px;
+          left: -1px;
+        }
+      }
+      &-whatsapp {
+        width: 28px;
+        line-height: 19px;
+        border: 0;
+        border-bottom-left-radius: 25px;
+
+        &:before {
+          position: relative;
+          top: 5px;
+          left: -3px;
+          font-size: 3.5rem;
+        }
+      }
+    }
+  }
+}
+
+.section-social {
+  margin-top: 50px;
+
+  .section-title {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: $font-special;
+    font-weight: 300;
+  }
+
+  .social-list {
+    margin-left: 50px;
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  .section-call {
+    padding-top: 0;
+  }
+
+  .section-payment {
+    .special-title {
+      margin-top: 50px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .section-social {
+    text-align: center;
+
+    .section-title {
+      display: block;
+    }
+    .social-list {
+      display: block;
+      margin-left: 0;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+body {
+  font-family: $font-default;
+  @include font-size(1.8);
+  color: #fff;
+  background-color: $gray-dark;
+}
+
+@media (min-width: $screen-sm) {
+  .container {
+    width: 768px;
+  }
+}

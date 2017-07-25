@@ -1,0 +1,19 @@
+@import "bootstrap/mixins";
+@import "project/mixins";
+@import "bootstrap/variables";
+@import "project/variables";
+
+//base
+@import "project/scaffolding";
+@import "project/fonts";
+@import "project/forms";
+@import "project/buttons";
+@import "project/glyphicons";
+
+//componentes
+@import "project/organisms/header";
+@import "project/molecules/social-list";
+@import "project/organisms/footer";
+
+//utilidades
+@import "project/utilities";

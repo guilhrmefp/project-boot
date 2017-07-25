@@ -1,21 +1,23 @@
 {
-  "name": "project-boot",
+  "name": "kidelicia",
   "version": "1.0.0",
-  "description": "Estudo de Gulp",
+  "description": "Homepage da Kidelícia Gourmet",
   "main": "main.html",
   "devDependencies": {
+    "autoprefixer": "^7.1.1",
     "browser-sync": "^2.18.11",
+    "cssnano": "^3.10.0",
     "del": "^2.2.2",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-cache": "^0.4.6",
     "gulp-compass": "^2.1.0",
     "gulp-compile-handlebars": "^0.6.1",
-    "gulp-cssnano": "^2.1.2",
-    "gulp-if": "^2.0.2",
+    "gulp-postcss": "^7.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-uglify": "^3.0.0",
-    "gulp-useref": "^3.1.2",
     "node-dir": "^0.1.16",
     "run-sequence": "^1.2.2"
   },
@@ -24,9 +26,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://guilhrmefp@bitbucket.org/guilhrmefp/project-boot.git"
+    "url": "git+https://guilhrmefp@bitbucket.org/guilhrmefp/kidelicia.git"
   },
   "author": "guilhrmefp",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/guilhrmefp/project-boot#readme"
+  "homepage": "https://bitbucket.org/guilhrmefp/kidelicia#readme"
 }

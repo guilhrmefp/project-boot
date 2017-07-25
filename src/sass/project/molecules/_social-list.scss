@@ -1,0 +1,51 @@
+.social-list {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  > li {
+    display: inline-block;
+    vertical-align: middle;
+    margin: {
+      left: 12px;
+      right: 12px;
+    }
+
+    > a {
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+    }
+  }
+
+  .glyphicon {
+    width: 54px;
+    line-height: 50px;
+    @include font-size(3);
+    color: #fff;
+    text-align: center;
+    border: 2px solid #fff;
+    border-radius: 100%;
+    transition: all linear 100ms;
+
+    &:hover, &:focus {
+      transform: scale(1.1);
+    }
+
+    &-facebook {
+      background-color: #3b5998;
+    }
+
+    &-whatsapp {
+      background-color: #25d366;
+    }
+
+    &-instagram {
+      background-color: #cc2366;
+      background: radial-gradient(circle at 33% 100%, #fed373 4%, #f15245 30%, #d92e7f 62%, #9b36b7 85%, #515ecf)
+    }
+  }
+}

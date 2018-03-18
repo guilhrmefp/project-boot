@@ -1,5 +1,35 @@
 body {
+  display: flex;
+  flex-direction: column;
   font-family: $font-default;
   @include font-size(1.8);
   color: #000;
+}
+
+header {
+  height: 10vh;
+  margin-bottom: 1vh;
+  background-color: lightblue;
+
+  > div {
+    flex: 1;
+    text-align: center;
+  }
+}
+
+main {
+  height: 78vh;
+  background-color: lightblue;
+}
+
+footer {
+  height: 10vh;
+  margin-top: 1vh;
+  background-color: lightblue;
+}
+
+header, main, footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

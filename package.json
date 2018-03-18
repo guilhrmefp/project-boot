@@ -1,7 +1,7 @@
 {
-  "name": "kidelicia",
+  "name": "Frontend Boot",
   "version": "1.0.0",
-  "description": "Homepage da Kidelícia Gourmet",
+  "description": "Frontend boot for static pages generation",
   "main": "main.html",
   "devDependencies": {
     "autoprefixer": "^7.1.1",
@@ -26,9 +26,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://guilhrmefp@bitbucket.org/guilhrmefp/kidelicia.git"
+    "url": "git+https://github.com/guilhrmefp/project-boot.git"
   },
   "author": "guilhrmefp",
-  "license": "ISC",
-  "homepage": "https://bitbucket.org/guilhrmefp/kidelicia#readme"
+  "license": "MIT",
+  "homepage": "https://github.com/guilhrmefp/project-boot#readme"
 }

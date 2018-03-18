@@ -1,4 +1,4 @@
-# Início de boot #
+# Beta #
 (https://css-tricks.com/gulp-for-beginners/)
 
 ## Pré-requisitos: ##
@@ -14,7 +14,7 @@ npm install gulp -g //Caso já tenho o gulp instalado globalmente, ignorar este 
 npm install
 ```
 
-##Tasks específicas##
+## Tasks específicas ##
 * **sass**        => Gera e minifica CSS com vendor prefixes e sourcemap
 * **uglify**      => Minifica JS com sourcemap
 * **handlebars**  => Gera o html das partials
@@ -25,9 +25,9 @@ npm install
 * **browserSync** => live-reload para os browsers
 * **watch**       => Arquivos que devem ter modificações vigiadas
 
-##Tasks produção##
+## Tasks produção ##
 * **build**       => Compila todo o projeto para produção
-* **default**     => Compila todo o projeto (task 'build') e roda as tasks 'browserSycnc' e 'watch' para trabalho
+* **default**     => Compila todo o projeto (task 'build') e roda as tasks 'browserSync' e 'watch' para desenvolvimento
 
 ## Pastas ignoradas no versionamento: ##
 * .sass-cache/ **-->** *(cache criado pelo sass)*
